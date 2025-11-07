@@ -1,0 +1,1683 @@
+<html lang="en">
+  <head>
+    <script
+      type="text/javascript"
+      crossorigin="anonymous"
+      async=""
+      src="https://us-assets.i.posthog.com/static/array.js"
+    ></script>
+    <script src="https://static.readdy.ai/static/e.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Digitrike - Smart Tricycle Booking System in Sudipen. Book, track, and enjoy seamless rides!">
+<meta name="keywords" content="Digitrike, tricycle booking, Sudipen, transport app, smart booking">
+<meta name="author" content="Digitrike Team">
+    <title>Digitrike - Smart Tricycle Booking System</title>
+    <link rel="icon" type="image/png" href="SuToda_icon.jpg" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#eab308",
+              secondary: "#fbbf24",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+    </style>
+    <style>
+      *,
+      ::before,
+      ::after {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+        --tw-contain-size: ;
+        --tw-contain-layout: ;
+        --tw-contain-paint: ;
+        --tw-contain-style: ;
+      }
+      ::backdrop {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+        --tw-contain-size: ;
+        --tw-contain-layout: ;
+        --tw-contain-paint: ;
+        --tw-contain-style: ;
+      } /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
+      *,
+      ::after,
+      ::before {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb;
+      }
+      ::after,
+      ::before {
+        --tw-content: "";
+      }
+      :host,
+      html {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        tab-size: 4;
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        margin: 0;
+        line-height: inherit;
+      }
+      hr {
+        height: 0;
+        color: inherit;
+        border-top-width: 1px;
+      }
+      abbr:where([title]) {
+        -webkit-text-decoration: underline dotted;
+        text-decoration: underline dotted;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      b,
+      strong {
+        font-weight: bolder;
+      }
+      code,
+      kbd,
+      pre,
+      samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+        font-size: 1em;
+      }
+      small {
+        font-size: 80%;
+      }
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sub {
+        bottom: -0.25em;
+      }
+      sup {
+        top: -0.5em;
+      }
+      table {
+        text-indent: 0;
+        border-color: inherit;
+        border-collapse: collapse;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 100%;
+        font-weight: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      button,
+      input:where([type="button"]),
+      input:where([type="reset"]),
+      input:where([type="submit"]) {
+        -webkit-appearance: button;
+        background-color: transparent;
+        background-image: none;
+      }
+      :-moz-focusring {
+        outline: auto;
+      }
+      :-moz-ui-invalid {
+        box-shadow: none;
+      }
+      progress {
+        vertical-align: baseline;
+      }
+      ::-webkit-inner-spin-button,
+      ::-webkit-outer-spin-button {
+        height: auto;
+      }
+      [type="search"] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      ::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      summary {
+        display: list-item;
+      }
+      blockquote,
+      dd,
+      dl,
+      figure,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      hr,
+      p,
+      pre {
+        margin: 0;
+      }
+      fieldset {
+        margin: 0;
+        padding: 0;
+      }
+      legend {
+        padding: 0;
+      }
+      menu,
+      ol,
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      dialog {
+        padding: 0;
+      }
+      textarea {
+        resize: vertical;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        opacity: 1;
+        color: #9ca3af;
+      }
+      [role="button"],
+      button {
+        cursor: pointer;
+      }
+      :disabled {
+        cursor: default;
+      }
+      audio,
+      canvas,
+      embed,
+      iframe,
+      img,
+      object,
+      svg,
+      video {
+        display: block;
+        vertical-align: middle;
+      }
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+      [hidden]:where(:not([hidden="until-found"])) {
+        display: none;
+      }
+      .absolute {
+        position: absolute;
+      }
+      .relative {
+        position: relative;
+      }
+      .inset-0 {
+        inset: 0px;
+      }
+      .left-4 {
+        left: 1rem;
+      }
+      .right-4 {
+        right: 1rem;
+      }
+      .top-1\/2 {
+        top: 50%;
+      }
+      .z-10 {
+        z-index: 10;
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .mb-12 {
+        margin-bottom: 3rem;
+      }
+      .mb-16 {
+        margin-bottom: 4rem;
+      }
+      .mb-2 {
+        margin-bottom: 0.5rem;
+      }
+      .mb-20 {
+        margin-bottom: 5rem;
+      }
+      .mb-3 {
+        margin-bottom: 0.75rem;
+      }
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+      .mb-6 {
+        margin-bottom: 1.5rem;
+      }
+      .mt-1 {
+        margin-top: 0.25rem;
+      }
+      .mt-4 {
+        margin-top: 1rem;
+      }
+      .block {
+        display: block;
+      }
+      .flex {
+        display: flex;
+      }
+      .grid {
+        display: grid;
+      }
+      .hidden {
+        display: none;
+      }
+      .h-10 {
+        height: 2.5rem;
+      }
+      .h-12 {
+        height: 3rem;
+      }
+      .h-2 {
+        height: 0.5rem;
+      }
+      .h-24 {
+        height: 6rem;
+      }
+      .h-\[28rem\] {
+        height: 28rem;
+      }
+      .h-full {
+        height: 100%;
+      }
+      .min-h-\[80vh\] {
+        min-height: 80vh;
+      }
+      .min-h-screen {
+        min-height: 100vh;
+      }
+      .w-10 {
+        width: 2.5rem;
+      }
+      .w-12 {
+        width: 3rem;
+      }
+      .w-2 {
+        width: 0.5rem;
+      }
+      .w-24 {
+        width: 6rem;
+      }
+      .w-full {
+        width: 100%;
+      }
+      .max-w-2xl {
+        max-width: 42rem;
+      }
+      .max-w-3xl {
+        max-width: 48rem;
+      }
+      .max-w-7xl {
+        max-width: 80rem;
+      }
+      .flex-shrink-0 {
+        flex-shrink: 0;
+      }
+      .-translate-y-1\/2 {
+        --tw-translate-y: -50%;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+          rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
+          skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+          scaleY(var(--tw-scale-y));
+      }
+      .cursor-pointer {
+        cursor: pointer;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .items-start {
+        align-items: flex-start;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .gap-12 {
+        gap: 3rem;
+      }
+      .gap-6 {
+        gap: 1.5rem;
+      }
+      .gap-8 {
+        gap: 2rem;
+      }
+      .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-x-reverse: 0;
+        margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+        margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+      }
+      .space-x-3 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-x-reverse: 0;
+        margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+        margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+      }
+      .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-x-reverse: 0;
+        margin-right: calc(1rem * var(--tw-space-x-reverse));
+        margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+      }
+      .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-x-reverse: 0;
+        margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+        margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+      }
+      .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-x-reverse: 0;
+        margin-right: calc(2rem * var(--tw-space-x-reverse));
+        margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+      }
+      .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+      }
+      .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+      }
+      .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+      }
+      .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+      }
+      .overflow-hidden {
+        overflow: hidden;
+      }
+      .whitespace-nowrap {
+        white-space: nowrap;
+      }
+      .\!rounded-button {
+        border-radius: 8px !important;
+      }
+      .rounded-2xl {
+        border-radius: 24px;
+      }
+      .rounded-full {
+        border-radius: 9999px;
+      }
+      .rounded-lg {
+        border-radius: 16px;
+      }
+      .rounded-xl {
+        border-radius: 20px;
+      }
+      .border {
+        border-width: 1px;
+      }
+      .border-b {
+        border-bottom-width: 1px;
+      }
+      .border-t {
+        border-top-width: 1px;
+      }
+      .border-gray-800 {
+        --tw-border-opacity: 1;
+        border-color: rgb(31 41 55 / var(--tw-border-opacity, 1));
+      }
+      .border-primary {
+        --tw-border-opacity: 1;
+        border-color: rgb(234 179 8 / var(--tw-border-opacity, 1));
+      }
+      .border-yellow-100 {
+        --tw-border-opacity: 1;
+        border-color: rgb(254 249 195 / var(--tw-border-opacity, 1));
+      }
+      .bg-gray-300 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+      }
+      .bg-gray-800 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+      }
+      .bg-gray-900 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+      }
+      .bg-primary {
+        --tw-bg-opacity: 1;
+        background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
+      }
+      .bg-white {
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+      }
+      .bg-white\/90 {
+        background-color: rgb(255 255 255 / 0.9);
+      }
+      .bg-yellow-50 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(254 252 232 / var(--tw-bg-opacity, 1));
+      }
+      .bg-gradient-to-br {
+        background-image: linear-gradient(
+          to bottom right,
+          var(--tw-gradient-stops)
+        );
+      }
+      .bg-gradient-to-r {
+        background-image: linear-gradient(to right, var(--tw-gradient-stops));
+      }
+      .from-yellow-50 {
+        --tw-gradient-from: #fefce8 var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(254 252 232 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+      }
+      .from-yellow-50\/95 {
+        --tw-gradient-from: rgb(254 252 232 / 0.95)
+          var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(254 252 232 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+      }
+      .via-yellow-50\/80 {
+        --tw-gradient-to: rgb(254 252 232 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from),
+          rgb(254 252 232 / 0.8) var(--tw-gradient-via-position),
+          var(--tw-gradient-to);
+      }
+      .to-transparent {
+        --tw-gradient-to: transparent var(--tw-gradient-to-position);
+      }
+      .to-yellow-100 {
+        --tw-gradient-to: #fef9c3 var(--tw-gradient-to-position);
+      }
+      .object-contain {
+        object-fit: contain;
+      }
+      .object-cover {
+        object-fit: cover;
+      }
+      .object-top {
+        object-position: top;
+      }
+      .p-1 {
+        padding: 0.25rem;
+      }
+      .p-4 {
+        padding: 1rem;
+      }
+      .p-6 {
+        padding: 1.5rem;
+      }
+      .p-8 {
+        padding: 2rem;
+      }
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .py-16 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+      .py-2 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .py-20 {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+      .py-3 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+      }
+      .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .pt-8 {
+        padding-top: 2rem;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .font-\[\'Pacifico\'\] {
+        font-family: "Pacifico";
+      }
+      .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+      .text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+      .text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+      .text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+      .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+      .font-semibold {
+        font-weight: 600;
+      }
+      .leading-relaxed {
+        line-height: 1.625;
+      }
+      .leading-tight {
+        line-height: 1.25;
+      }
+      .text-blue-500 {
+        --tw-text-opacity: 1;
+        color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+      }
+      .text-gray-300 {
+        --tw-text-opacity: 1;
+        color: rgb(209 213 219 / var(--tw-text-opacity, 1));
+      }
+      .text-gray-400 {
+        --tw-text-opacity: 1;
+        color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+      }
+      .text-gray-600 {
+        --tw-text-opacity: 1;
+        color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+      }
+      .text-gray-700 {
+        --tw-text-opacity: 1;
+        color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+      }
+      .text-gray-800 {
+        --tw-text-opacity: 1;
+        color: rgb(31 41 55 / var(--tw-text-opacity, 1));
+      }
+      .text-gray-900 {
+        --tw-text-opacity: 1;
+        color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+      }
+      .text-green-500 {
+        --tw-text-opacity: 1;
+        color: rgb(34 197 94 / var(--tw-text-opacity, 1));
+      }
+      .text-primary {
+        --tw-text-opacity: 1;
+        color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+      }
+      .text-white {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+      }
+      .shadow-lg {
+        --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+          0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+          0 4px 6px -4px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+          var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+      .shadow-sm {
+        --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+          var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+      .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      .transition-colors {
+        transition-property: color, background-color, border-color, fill, stroke,
+          -webkit-text-decoration-color;
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke;
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      .transition-shadow {
+        transition-property: box-shadow;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      .transition-transform {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      .duration-500 {
+        transition-duration: 500ms;
+      }
+      .ease-in-out {
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .hover\:bg-primary:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
+      }
+      .hover\:bg-white:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+      }
+      .hover\:bg-yellow-600:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(202 138 4 / var(--tw-bg-opacity, 1));
+      }
+      .hover\:text-primary:hover {
+        --tw-text-opacity: 1;
+        color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+      }
+      .hover\:text-white:hover {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+      }
+      .hover\:shadow-xl:hover {
+        --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+        --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+          0 8px 10px -6px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+          var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+      @media (min-width: 640px) {
+        .sm\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .sm\:text-4xl {
+          font-size: 2.25rem;
+          line-height: 2.5rem;
+        }
+        .sm\:text-xl {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+        }
+      }
+      @media (min-width: 768px) {
+        .md\:mb-0 {
+          margin-bottom: 0px;
+        }
+        .md\:flex {
+          display: flex;
+        }
+        .md\:hidden {
+          display: none;
+        }
+        .md\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .md\:flex-row {
+          flex-direction: row;
+        }
+      }
+      @media (min-width: 1024px) {
+        .lg\:col-span-2 {
+          grid-column: span 2 / span 2;
+        }
+        .lg\:w-1\/2 {
+          width: 50%;
+        }
+        .lg\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .lg\:grid-cols-4 {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .lg\:gap-12 {
+          gap: 3rem;
+        }
+        .lg\:gap-16 {
+          gap: 4rem;
+        }
+        .lg\:gap-8 {
+          gap: 2rem;
+        }
+        .lg\:p-8 {
+          padding: 2rem;
+        }
+        .lg\:text-2xl {
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
+        .lg\:text-3xl {
+          font-size: 1.875rem;
+          line-height: 2.25rem;
+        }
+        .lg\:text-6xl {
+          font-size: 3.75rem;
+          line-height: 1;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Secular+One&amp;display=swap"
+    />
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-yellow-100">
+      <nav class="px-6 py-4">
+        <div class="sticky top-0 bg-white z-50 flex items-center justify-between max-w-7xl mx-auto">
+          <div class="flex items-center space-x-2">
+            <div
+              class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center p-1"
+            >
+              <img
+                src="https://static.readdy.ai/image/233a9126fa5ade72cd1cee4aa7c556bb/169b447ef90537383b0ddbcd075e0b4c.jpeg"
+                alt="Digitrike Logo"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <span class="text-2xl font-['Pacifico'] text-yellow-500"
+              >Digitrike</span
+            >
+          </div>
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >About</a
+            >
+            <a
+              href="#developers"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Developers</a
+            >
+          </div>
+          <!-- Mobile Hamburger Button -->
+          <button
+            class="md:hidden hamburger-btn w-10 h-10 flex items-center justify-center"
+          >
+            <i class="text-2xl text-gray-700 ri-menu-line"></i>
+          </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div
+          class="mobile-menu md:hidden bg-white border-t border-yellow-100 hidden"
+        >
+          <div class="px-6 py-4 space-y-4">
+            <a
+              href="#home"
+              class="block text-gray-700 hover:text-primary transition-colors py-2"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="block text-gray-700 hover:text-primary transition-colors py-2"
+              >About</a
+            >
+            <a
+              href="#developers"
+              class="block text-gray-700 hover:text-primary transition-colors py-2"
+              >Developers</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <section
+  id="home"
+  class="relative min-h-screen overflow-hidden"
+>
+  <!-- Background Image -->
+  <div
+    class="absolute inset-0"
+    style="
+      background-image: url('./loginbackground.jpg');
+      background-size: cover;
+      background-position: center;
+    "
+  ></div>
+
+  <!-- Responsive Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-yellow-100/90 via-yellow-50/80 to-transparent"></div>
+
+  <!-- Content -->
+  <div
+    class="relative z-10 flex flex-col justify-end lg:justify-center min-h-screen px-6 py-20 lg:px-20"
+  >
+    <div
+      class="max-w-3xl text-center lg:text-left space-y-6 lg:space-y-8"
+    >
+      <h1
+        class="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight"
+      >
+        Smart Tricycle Booking System for
+        <span class="text-yellow-500">Sudipen</span>
+      </h1>
+      <p
+        class="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl"
+      >
+        Experience seamless local travel with Digitrike's innovative fare
+        system. Book rides, track trips, and enjoy convenient transportation
+        in Sudipen with just a few taps.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-yellow-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">About Digitrike</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Revolutionizing local transportation in Sudipen with smart
+            technology that connects passengers and drivers seamlessly.
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20">
+          <div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
+              Key Features
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="ri-map-pin-line text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-900 mb-2">
+                    Easy Ride Booking
+                  </h4>
+                  <p class="text-gray-600">
+                    Book tricycle rides instantly with our user-friendly
+                    interface. Select your pickup and destination points with
+                    just a few taps.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="ri-money-dollar-circle-line text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-900 mb-2">
+                    Fare Estimates
+                  </h4>
+                  <p class="text-gray-600">
+                    Get accurate fare estimates before booking your ride.
+                    Transparent pricing with no hidden charges for peace of
+                    mind.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="ri-route-line text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-900 mb-2">
+                    Real-time Trip Tracking
+                  </h4>
+                  <p class="text-gray-600">
+                    Track your tricycle's location in real-time. Know exactly
+                    when your ride will arrive and monitor your journey
+                    progress.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+  <div class="relative">
+    <div class="app-carousel-container overflow-hidden rounded-xl">
+      <div
+        class="app-carousel-track flex transition-transform duration-500 ease-in-out"
+        style="transform: translateX(-100%)"
+      >
+        <div class="app-carousel-slide w-full flex-shrink-0">
+          <img
+            src="./1.png"
+            alt="Booking Interface"
+            class="w-full h-auto object-contain object-top rounded-lg"
+          />
+        </div>
+        <div class="app-carousel-slide w-full flex-shrink-0">
+          <img
+            src="./2.png"
+            alt="Fare Estimates"
+            class="w-full h-auto object-contain object-top rounded-lg"
+          />
+        </div>
+        <div class="app-carousel-slide w-full flex-shrink-0">
+          <img
+            src="./3.png"
+            alt="Trip Tracking"
+            class="w-full h-auto object-contain object-top rounded-lg"
+          />
+        </div>
+        <div class="app-carousel-slide w-full flex-shrink-0">
+          <img
+            src="./4.png"
+            alt="User Dashboard"
+            class="w-full h-auto object-contain object-top rounded-lg"
+          />
+        </div>
+        <div class="app-carousel-slide w-full flex-shrink-0">
+          <img
+            src="./5.png"
+            alt="User Dashboard"
+            class="w-full h-auto object-contain object-top rounded-lg"
+          />
+        </div>
+        <div class="app-carousel-slide w-full flex-shrink-0">
+          <img
+            src="./6.png"
+            alt="User Dashboard"
+            class="w-full h-auto object-contain object-top rounded-lg"
+          />
+        </div>
+      </div>
+    </div>
+
+              <button
+                class="app-carousel-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all z-10"
+              >
+                <i class="ri-arrow-left-line text-lg text-gray-700"></i>
+              </button>
+              <button
+                class="app-carousel-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all z-10"
+              >
+                <i class="ri-arrow-right-line text-lg text-gray-700"></i>
+              </button>
+              <div class="app-carousel-dots flex justify-center mt-4 space-x-2">
+                <button
+                  class="app-dot w-2 h-2 rounded-full transition-all bg-gray-300"
+                ></button>
+                <button
+                  class="app-dot w-2 h-2 rounded-full transition-all bg-primary"
+                ></button>
+                <button
+                  class="app-dot w-2 h-2 rounded-full transition-all bg-gray-300"
+                ></button>
+                <button
+                  class="app-dot w-2 h-2 rounded-full transition-all bg-gray-300"
+                ></button>
+                <button
+                  class="app-dot w-2 h-2 rounded-full transition-all bg-gray-300"
+                ></button>
+                <button
+                  class="app-dot w-2 h-2 rounded-full transition-all bg-gray-300"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16">
+          <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
+            <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+              Platform Support
+            </h3>
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg"
+              >
+                <div class="flex items-center space-x-3">
+  <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+    <i class="ri-android-line text-white"></i>
+  </div>
+
+  <div class="flex flex-col">
+    <span class="font-semibold text-gray-900">Android App</span>
+    <span class="text-xs text-gray-500"><b>Minimum Requirements:</b> Android 6 (Marshmallow)</span>
+  </div>
+</div>
+                <a href="./DigiTrike.apk"
+                  class="download-btn bg-primary text-white px-4 py-2 !rounded-button hover:bg-yellow-600 transition-colors whitespace-nowrap"
+                >
+                  Download
+              </a>
+              </div>
+              <div
+                class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg"
+              >
+                <div class="flex items-center space-x-3">
+                  <div
+                    class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"
+                  >
+                    <i class="ri-global-line text-white"></i>
+                  </div>
+                  <span class="font-semibold text-gray-900"
+                    >Web Application</span
+                  >
+                </div>
+                <button
+                  class="visit-web-btn border border-primary text-primary px-4 py-2 !rounded-button hover:bg-primary hover:text-white transition-colors whitespace-nowrap"
+                >
+                  Visit Web
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
+  <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+    Why Choose <span class="text-yellow-500">Digitrike?</span>
+  </h3>
+
+  <div class="space-y-4">
+    <div class="flex items-start space-x-3">
+      <i class="ri-star-smile-line text-yellow-500 text-xl mt-1"></i>
+      <span class="text-gray-700">
+        Fast and reliable tricycle booking within Sudipen.
+      </span>
+    </div>
+    <div class="flex items-start space-x-3">
+      <i class="ri-smartphone-line text-yellow-500 text-xl mt-1"></i>
+      <span class="text-gray-700">
+        Easy-to-use mobile and web app for all users.
+      </span>
+    </div>
+    <div class="flex items-start space-x-3">
+      <i class="ri-map-pin-line text-yellow-500 text-xl mt-1"></i>
+      <span class="text-gray-700">
+        Real-time driver tracking for a safer, smoother ride.
+      </span>
+    </div>
+    <div class="flex items-start space-x-3">
+      <i class="ri-cash-line text-yellow-500 text-xl mt-1"></i>
+      <span class="text-gray-700">
+        Convenient cash payment — no hidden fees, no hassle.
+      </span>
+    </div>
+    <div class="flex items-start space-x-3">
+      <i class="ri-team-line text-yellow-500 text-xl mt-1"></i>
+      <span class="text-gray-700">
+        Powered by trusted local tricycle operators in Sudipen.
+      </span>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+   <!-- Developers Section -->
+<section id="developers" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">
+        Meet Our Development Team
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        The talented individuals behind Digitrike's innovative
+        transportation solution for Sudipen.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div
+        class="bg-yellow-50 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <img
+          src="./atornee.jpg"
+          alt="Lead Developer"
+          class="w-24 h-24 rounded-full mx-auto mb-4 object-cover object-top"
+        />
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Atornee Maala</h3>
+        <p class="text-primary font-semibold mb-3">Project Manager System Analyst and Designer</p>
+        <p class="text-gray-600 text-sm">
+          FOversees project direction, monitors progress, coordinates with stakeholders, and manages task allocation.  Analyzes system requirements, designs booking and fare processes, and develops the system architecture.
+        </p>
+      </div>
+      <div
+        class="bg-yellow-50 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <img
+          src="./deo.jpg"
+          alt="UI/UX Designer"
+          class="w-24 h-24 rounded-full mx-auto mb-4 object-cover object-top"
+        />
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Deo Ongotan</h3>
+        <p class="text-primary font-semibold mb-3">Programmer and Developerr</p>
+        <p class="text-gray-600 text-sm">
+          Implements core logic, booking interface, real-time ride requests, fare computation, and GPS features.
+        </p>
+      </div>
+      <div
+        class="bg-yellow-50 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <img
+          src="./Jereme.jpg"
+          alt="Backend Developer"
+          class="w-24 h-24 rounded-full mx-auto mb-4 object-cover object-top"
+        />
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Jereme Ann Badana</h3>
+        <p class="text-primary font-semibold mb-3">QA Tester</p>
+        <p class="text-gray-600 text-sm">
+          Conducts testing, verifies booking and fare accuracy, resolves issues, and ensures reliable performance.
+        </p>
+      </div>
+      <div
+        class="bg-yellow-50 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <img
+          src="./jhemry.jpg"
+          alt="Project Manager"
+          class="w-24 h-24 rounded-full mx-auto mb-4 object-cover object-top"
+        />
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Jhemry Camarillio</h3>
+        <p class="text-primary font-semibold mb-3">OA Tester</p>
+        <p class="text-gray-600 text-sm">
+          Conducts testing, verifies booking and fare accuracy, resolves issues, and ensures reliable performance.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Adviser Section -->
+<section id="adviser" class="py-16 bg-yellow-50">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Capstone Adviser</h2>
+    <div
+  class="bg-white rounded-2xl p-8 shadow-lg inline-block hover:shadow-xl transition-shadow"
+>
+  <img
+    src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20Filipino%20college%20professor%20in%20business%20attire&width=300&height=300&seq=adv001&orientation=squarish"
+    alt="Project Adviser"
+    class="w-28 h-28 rounded-full mx-auto mb-4 object-cover object-top"
+  />
+  <h3 class="text-2xl font-bold text-gray-900 mb-1">
+    Maryjane Hipol, MIT
+  </h3>
+  <p class="text-primary font-semibold mb-3">
+    Capstone Adviser – ISPSC Tagudin
+  </p>
+  <p class="text-gray-600 max-w-2xl mx-auto">
+    Guided the DigiTrike team throughout the system development and manuscript preparation, providing valuable insights and support in every stage of the project.
+  </p>
+</div>
+
+  </div>
+</section>  
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-4 gap-12 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center p-1"
+              >
+                <img
+                  src="https://static.readdy.ai/image/233a9126fa5ade72cd1cee4aa7c556bb/169b447ef90537383b0ddbcd075e0b4c.jpeg"
+                  alt="Digitrike Logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <span class="text-3xl font-['Pacifico'] text-white"
+                >Digitrike</span
+              >
+            </div>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+              Transforming local transportation in Sudipen with smart tricycle
+              booking technology. Safe, reliable, and convenient rides for
+              everyone in the community.
+            </p>
+            <div class="flex space-x-4">
+  <a
+    href="https://web.facebook.com/SudiSudipen/?_rdc=1&_rdr#"
+    target="_blank"
+    class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
+  >
+    <i class="ri-facebook-fill text-white"></i>
+  </a>
+  <a
+    href="https://x.com/SudipenPSLUPPO"
+    target="_blank"
+    class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
+  >
+    <i class="ri-twitter-fill text-white"></i>
+  </a>
+  <a
+    href="https://www.sudipenlaunion.gov.ph/"
+    target="_blank"
+    class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
+  >
+    <i class="ri-earth-fill text-white"></i>
+  </a>
+</div>
+
+
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+            <div class="space-y-3">
+              <a
+                href="#home"
+                class="block text-gray-300 hover:text-primary transition-colors"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="block text-gray-300 hover:text-primary transition-colors"
+                >About</a
+              >
+              <a
+                href="#developers"
+                class="block text-gray-300 hover:text-primary transition-colors"
+                >Developers</a
+              >
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-6">Educational Partnership</h3>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-16 h-16 rounded-lg flex items-center justify-center p-1">
+  <img
+    src="./ispsc.png"
+    alt="ISPSC Logo"
+    class="w-full h-full object-contain"
+  />
+</div>
+
+              <div>
+                <a
+                  href="https://www.ispsc.edu.ph/home/"
+                  class="text-white hover:text-primary transition-colors font-semibold"
+                >
+                  ISPSC Tagudin Campus
+                </a>
+                <p class="text-gray-400 text-sm">Educational Institution</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 mb-4 md:mb-0">
+               Capstone Project: DigiTrike – ISPSC Tagudin (2025–2026)
+            </p>
+            <div class="flex items-center space-x-6 text-sm text-gray-400">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      type="text/javascript"
+      crossorigin="anonymous"
+      src="https://us-assets.i.posthog.com/static/surveys.js?v=1.288.0"
+    ></script>
+    <script
+      type="text/javascript"
+      crossorigin="anonymous"
+      src="https://us-assets.i.posthog.com/array/phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd/config.js"
+    ></script>
+    <script
+      type="text/javascript"
+      crossorigin="anonymous"
+      src="https://us-assets.i.posthog.com/static/dead-clicks-autocapture.js?v=1.288.0"
+    ></script>
+    <script id="app-carousel-functionality">
+      document.addEventListener("DOMContentLoaded", function () {
+        const appTrack = document.querySelector(".app-carousel-track");
+        const appSlides = document.querySelectorAll(".app-carousel-slide");
+        const appPrevBtn = document.querySelector(".app-carousel-prev");
+        const appNextBtn = document.querySelector(".app-carousel-next");
+        const appDots = document.querySelectorAll(".app-dot");
+        let appCurrentSlide = 0;
+        const appTotalSlides = appSlides.length;
+        function updateAppCarousel() {
+          appTrack.style.transform = `translateX(-${appCurrentSlide * 100}%)`;
+          appDots.forEach((dot, index) => {
+            if (index === appCurrentSlide) {
+              dot.classList.remove("bg-gray-300");
+              dot.classList.add("bg-primary");
+            } else {
+              dot.classList.remove("bg-primary");
+              dot.classList.add("bg-gray-300");
+            }
+          });
+        }
+        function nextAppSlide() {
+          appCurrentSlide = (appCurrentSlide + 1) % appTotalSlides;
+          updateAppCarousel();
+        }
+        function prevAppSlide() {
+          appCurrentSlide =
+            (appCurrentSlide - 1 + appTotalSlides) % appTotalSlides;
+          updateAppCarousel();
+        }
+        appNextBtn.addEventListener("click", nextAppSlide);
+        appPrevBtn.addEventListener("click", prevAppSlide);
+        appDots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            appCurrentSlide = index;
+            updateAppCarousel();
+          });
+        });
+        setInterval(nextAppSlide, 4000);
+      });
+    </script>
+    <script id="mobile-menu-functionality">
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.querySelector(".hamburger-btn");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        if (hamburgerBtn && mobileMenu) {
+          const hamburgerIcon = hamburgerBtn.querySelector("i");
+          let isMenuOpen = false;
+          if (hamburgerIcon) {
+            hamburgerBtn.addEventListener("click", function () {
+              isMenuOpen = !isMenuOpen;
+              if (isMenuOpen) {
+                mobileMenu.classList.remove("hidden");
+                hamburgerIcon.classList.remove("ri-menu-line");
+                hamburgerIcon.classList.add("ri-close-line");
+              } else {
+                mobileMenu.classList.add("hidden");
+                hamburgerIcon.classList.remove("ri-close-line");
+                hamburgerIcon.classList.add("ri-menu-line");
+              }
+            });
+            const mobileNavLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+            mobileNavLinks.forEach((link) => {
+              link.addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                hamburgerIcon.classList.remove("ri-close-line");
+                hamburgerIcon.classList.add("ri-menu-line");
+                isMenuOpen = false;
+              });
+            });
+          }
+        }
+      });
+    </script>
+    <script id="smooth-scrolling">
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+      });
+    </script>
+    <script id="platform-links-functionality">
+      document.addEventListener("DOMContentLoaded", function () {
+        const downloadBtn = document.querySelector(".download-btn");
+        const visitWebBtn = document.querySelector(".visit-web-btn");
+        if (visitWebBtn) {
+          visitWebBtn.addEventListener("click", function () {
+            window.open("https://digitrike-c5684.web.app/", "_blank");
+          });
+        }
+      });
+    </script>
+    <script>
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.crossOrigin = "anonymous"),
+              (p.async = !0),
+              (p.src =
+                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+                "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r
+              );
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = "posthog";
+                  return (
+                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                  );
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + ".people (stub)";
+                },
+                o =
+                  "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(
+                    " "
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd", {
+        api_host: "https://us.i.posthog.com",
+        autocapture: false,
+        capture_pageview: false,
+        capture_pageleave: false,
+        capture_performance: {
+          web_vitals: false,
+        },
+        rageclick: false,
+      });
+      window.shareKey = "6inK0coJZ7NvIhZKSo0-9A";
+      window.host = "readdy.ai";
+    </script>
+  </body>
+</html>
