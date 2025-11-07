@@ -14,6 +14,7 @@
 <meta name="author" content="Digitrike Team">
     <title>Digitrike - Smart Tricycle Booking System</title>
     <link rel="icon" type="image/png" href="SuToda_icon.jpg" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
       tailwind.config = {
@@ -1013,11 +1014,10 @@
         </div>
       </nav>
     </header>
+
+
     <!-- Hero Section -->
-    <section
-  id="home"
-  class="relative min-h-screen overflow-hidden"
->
+<section id="home" class="relative min-h-screen overflow-hidden">
   <!-- Background Image -->
   <div
     class="absolute inset-0"
@@ -1033,7 +1033,7 @@
 
   <!-- Content -->
   <div
-    class="relative z-10 flex flex-col justify-end lg:justify-center min-h-screen px-6 py-20 lg:px-20"
+    class="relative z-10 flex flex-col justify-start min-h-screen px-6 pt-64 lg:px-20"
   >
     <div
       class="max-w-3xl text-center lg:text-left space-y-6 lg:space-y-8"
@@ -1054,6 +1054,8 @@
     </div>
   </div>
 </section>
+
+
 
 
     <!-- About Section -->
@@ -1211,51 +1213,51 @@
           </div>
         </div>
         <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16">
-          <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
-            <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
-              Platform Support
-            </h3>
-            <div class="space-y-4">
-              <div
-                class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg"
-              >
-                <div class="flex items-center space-x-3">
-  <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-    <i class="ri-android-line text-white"></i>
-  </div>
+  <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
+    <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+      Platform Support
+    </h3>
+    <div class="space-y-4">
+      <!-- Android App -->
+      <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+        <div class="flex items-center space-x-3">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+            <i class="ri-android-line text-white text-2xl"></i>
+          </div>
+          <div class="flex flex-col text-sm sm:text-base">
+            <span class="font-semibold text-gray-900">Android App</span>
+            <span class="text-xs text-gray-500">
+              <b>Minimum Requirements:</b> Android 6 (Marshmallow)
+            </span>
+          </div>
+        </div>
+        <a
+          href="./DigiTrike.apk"
+          class="download-btn bg-primary text-white px-4 py-2 rounded-button hover:bg-yellow-600 transition-colors whitespace-nowrap"
+        >
+          Download
+        </a>
+      </div>
 
-  <div class="flex flex-col">
-    <span class="font-semibold text-gray-900">Android App</span>
-    <span class="text-xs text-gray-500"><b>Minimum Requirements:</b> Android 6 (Marshmallow)</span>
+      <!-- Web Application -->
+      <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+        <div class="flex items-center space-x-3">
+          <div class="flex-shrink-0 w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+            <i class="ri-global-line text-white text-2xl"></i>
+          </div>
+          <span class="font-semibold text-gray-900">Web Application</span>
+        </div>
+        <button
+          class="visit-web-btn border border-primary text-primary px-4 py-2 rounded-button hover:bg-primary hover:text-white transition-colors whitespace-nowrap"
+        >
+          Visit Web
+        </button>
+      </div>
+    </div>
   </div>
 </div>
-                <a href="./DigiTrike.apk"
-                  class="download-btn bg-primary text-white px-4 py-2 !rounded-button hover:bg-yellow-600 transition-colors whitespace-nowrap"
-                >
-                  Download
-              </a>
-              </div>
-              <div
-                class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg"
-              >
-                <div class="flex items-center space-x-3">
-                  <div
-                    class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"
-                  >
-                    <i class="ri-global-line text-white"></i>
-                  </div>
-                  <span class="font-semibold text-gray-900"
-                    >Web Application</span
-                  >
-                </div>
-                <button
-                  class="visit-web-btn border border-primary text-primary px-4 py-2 !rounded-button hover:bg-primary hover:text-white transition-colors whitespace-nowrap"
-                >
-                  Visit Web
-                </button>
-              </div>
-            </div>
-          </div>
+
+
           <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
   <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
     Why Choose <span class="text-yellow-500">Digitrike?</span>
@@ -1321,7 +1323,7 @@
         <h3 class="text-xl font-bold text-gray-900 mb-2">Atornee Maala</h3>
         <p class="text-primary font-semibold mb-3">Project Manager System Analyst and Designer</p>
         <p class="text-gray-600 text-sm">
-          FOversees project direction, monitors progress, coordinates with stakeholders, and manages task allocation.  Analyzes system requirements, designs booking and fare processes, and develops the system architecture.
+          Oversees project direction, monitors progress, coordinates with stakeholders, and manages task allocation.  Analyzes system requirements, designs booking and fare processes, and develops the system architecture.
         </p>
       </div>
       <div
@@ -1342,7 +1344,7 @@
         class="bg-yellow-50 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
       >
         <img
-          src="./jereme.jpg"
+          src="./Jereme.jpg"
           alt="Backend Developer"
           class="w-24 h-24 rounded-full mx-auto mb-4 object-cover object-top"
         />
@@ -1378,12 +1380,12 @@
   class="bg-white rounded-2xl p-8 shadow-lg inline-block hover:shadow-xl transition-shadow"
 >
   <img
-    src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20Filipino%20college%20professor%20in%20business%20attire&width=300&height=300&seq=adv001&orientation=squarish"
+    src="./maam.jpg"
     alt="Project Adviser"
     class="w-28 h-28 rounded-full mx-auto mb-4 object-cover object-top"
   />
   <h3 class="text-2xl font-bold text-gray-900 mb-1">
-    Maryjane Hipol, MIT
+    Mary Jane Hipol, MIT
   </h3>
   <p class="text-primary font-semibold mb-3">
     Capstone Adviser – ISPSC Tagudin
@@ -1395,109 +1397,95 @@
 
   </div>
 </section>  
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-4 gap-12 mb-12">
-          <div class="lg:col-span-2">
-            <div class="flex items-center space-x-3 mb-6">
-              <div
-                class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center p-1"
-              >
-                <img
-                  src="https://static.readdy.ai/image/233a9126fa5ade72cd1cee4aa7c556bb/169b447ef90537383b0ddbcd075e0b4c.jpeg"
-                  alt="Digitrike Logo"
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <span class="text-3xl font-['Pacifico'] text-white"
-                >Digitrike</span
-              >
-            </div>
-            <p class="text-gray-300 text-lg leading-relaxed mb-6">
-              Transforming local transportation in Sudipen with smart tricycle
-              booking technology. Safe, reliable, and convenient rides for
-              everyone in the community.
-            </p>
-            <div class="flex space-x-4">
-  <a
-    href="https://web.facebook.com/SudiSudipen/?_rdc=1&_rdr#"
-    target="_blank"
-    class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
-  >
-    <i class="ri-facebook-fill text-white"></i>
-  </a>
-  <a
-    href="https://x.com/SudipenPSLUPPO"
-    target="_blank"
-    class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
-  >
-    <i class="ri-twitter-fill text-white"></i>
-  </a>
-  <a
-    href="https://www.sudipenlaunion.gov.ph/"
-    target="_blank"
-    class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
-  >
-    <i class="ri-earth-fill text-white"></i>
-  </a>
-</div>
-
-
+   <!-- Footer -->
+<footer class="bg-gray-900 text-white py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-4 gap-12 mb-12">
+      <div class="lg:col-span-2">
+        <div class="flex items-center space-x-3 mb-6">
+          <div
+            class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center p-1"
+          >
+            <img
+              src="https://static.readdy.ai/image/233a9126fa5ade72cd1cee4aa7c556bb/169b447ef90537383b0ddbcd075e0b4c.jpeg"
+              alt="Digitrike Logo"
+              class="w-full h-full object-contain"
+            />
           </div>
-          <div>
-            <h3 class="text-xl font-bold mb-6">Quick Links</h3>
-            <div class="space-y-3">
-              <a
-                href="#home"
-                class="block text-gray-300 hover:text-primary transition-colors"
-                >Home</a
-              >
-              <a
-                href="#about"
-                class="block text-gray-300 hover:text-primary transition-colors"
-                >About</a
-              >
-              <a
-                href="#developers"
-                class="block text-gray-300 hover:text-primary transition-colors"
-                >Developers</a
-              >
-            </div>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold mb-6">Educational Partnership</h3>
-            <div class="flex items-center space-x-3 mb-4">
-              <div class="w-16 h-16 rounded-lg flex items-center justify-center p-1">
-  <img
-    src="./ispsc.png"
-    alt="ISPSC Logo"
-    class="w-full h-full object-contain"
-  />
-</div>
-
-              <div>
-                <a
-                  href="https://www.ispsc.edu.ph/home/"
-                  class="text-white hover:text-primary transition-colors font-semibold"
-                >
-                  ISPSC Tagudin Campus
-                </a>
-                <p class="text-gray-400 text-sm">Educational Institution</p>
-              </div>
-            </div>
-          </div>
+          <span class="text-3xl font-['Pacifico'] text-white">Digitrike</span>
         </div>
-        <div class="border-t border-gray-800 pt-8">
-          <div class="flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-400 mb-4 md:mb-0">
-               Capstone Project: DigiTrike – ISPSC Tagudin (2025–2026)
-            </p>
-            <div class="flex items-center space-x-6 text-sm text-gray-400">
+        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+          Transforming local transportation in Sudipen with smart tricycle
+          booking technology. Safe, reliable, and convenient rides for everyone
+          in the community.
+        </p>
+        <div class="flex space-x-4">
+          <a
+            href="https://web.facebook.com/SudiSudipen/?_rdc=1&_rdr#"
+            target="_blank"
+            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
+          >
+            <i class="ri-facebook-fill text-white"></i>
+          </a>
+          <a
+            href="https://x.com/SudipenPSLUPPO"
+            target="_blank"
+            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
+          >
+            <i class="ri-twitter-fill text-white"></i>
+          </a>
+          <a
+            href="https://www.sudipenlaunion.gov.ph/"
+            target="_blank"
+            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
+          >
+            <i class="ri-earth-fill text-white"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+        <div class="space-y-3">
+          <a href="#home" class="block text-gray-300 hover:text-primary transition-colors">Home</a>
+          <a href="#about" class="block text-gray-300 hover:text-primary transition-colors">About</a>
+          <a href="#developers" class="block text-gray-300 hover:text-primary transition-colors">Developers</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold mb-6">Educational Partnership</h3>
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-16 h-16 rounded-lg flex items-center justify-center p-1">
+            <img src="./ispsc.png" alt="ISPSC Logo" class="w-full h-full object-contain" />
+          </div>
+          <div>
+            <a
+              href="https://www.ispsc.edu.ph/home/"
+              class="text-white hover:text-primary transition-colors font-semibold"
+            >
+              ISPSC Tagudin Campus
+            </a>
+            <p class="text-gray-400 text-sm">Educational Institution</p>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+
+    <!-- Fixed bottom part -->
+    <div class="border-t border-gray-800 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">
+          Capstone Project: DigiTrike – ISPSC Tagudin (2025–2026)
+        </p>
+        <div class="flex items-center space-x-6 text-sm text-gray-400">
+          <!-- optional links/icons here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
     <script
       type="text/javascript"
       crossorigin="anonymous"
@@ -1679,6 +1667,74 @@
       window.shareKey = "6inK0coJZ7NvIhZKSo0-9A";
       window.host = "readdy.ai";
     </script>
+
+  <!-- Scroll to Top Button -->
+<button
+  id="scrollTopBtn"
+  class="hidden fixed bottom-6 right-6 w-10 h-10 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center overflow-hidden"
+  aria-label="Scroll to top"
+>
+  <!-- Background Image -->
+  <div
+    class="absolute inset-0 bg-center bg-contain bg-no-repeat rounded-full"
+    style="background-image: url('./Sutoda_icon.jpg');"
+  ></div>
+
+  <!-- Arrow Icon -->
+  <i class="ri-arrow-up-line yellow-flow text-2xl relative z-10"></i>
+</button>
+
+<!-- Add this CSS -->
+<style>
+  .yellow-flow {
+    background: linear-gradient(
+      0deg,
+      #8f740b,  /* bright yellow */
+      #5b5109,  /* light yellow */
+      #facc15   /* bright yellow again */
+    );
+    background-size: 100% 200%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: yellowFlowDown 2.5s ease-in-out infinite;
+  }
+
+  @keyframes yellowFlowDown {
+    0% {
+      background-position: 0% 0%;   /* start at top */
+    }
+    100% {
+      background-position: 0% 100%; /* flow to bottom */
+    }
+  }
+</style>
+
+
+
+
+<!-- Script for Scroll-to-Top Behavior -->
+<script>
+  const scrollBtn = document.getElementById("scrollTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > window.innerHeight * 0.8) {
+      // show button only when below Home section
+      scrollBtn.classList.remove("hidden");
+      scrollBtn.classList.add("flex");
+    } else {
+      scrollBtn.classList.add("hidden");
+      scrollBtn.classList.remove("flex");
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
   </body>
 </html>
-
