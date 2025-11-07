@@ -1676,12 +1676,12 @@
 >
   <!-- Background Image -->
   <div
-    class="absolute inset-0 bg-center bg-contain bg-no-repeat rounded-full brightness-90"
-    style="background-image: url('./SuToda_icon.jpg'); filter: brightness(0.9) contrast(1.1);"
+    class="absolute inset-0 bg-center bg-contain bg-no-repeat rounded-full"
+    style="background-image: url('./SuToda_icon.jpg');"
   ></div>
 
   <!-- Arrow Icon -->
-  <i class="ri-arrow-up-line yellow-flow text-2xl relative z-10 drop-shadow-[0_0_4px_rgba(255,255,255,0.8)]"></i>
+  <i class="ri-arrow-up-line yellow-flow text-2xl relative z-10 drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]"></i>
 </button>
 
 <!-- Add this CSS -->
@@ -1689,8 +1689,9 @@
   .yellow-flow {
     background: linear-gradient(
       180deg,
-      #facc15 0%,  /* single strong yellow */
-      #facc15 100%
+      #ffffff 0%,   /* white */
+      #facc15 50%,  /* bright yellow */
+      #ffffff 100%  /* back to white */
     );
     background-size: 100% 200%;
     background-position: 0% 0%;
@@ -1738,5 +1739,6 @@
 
   </body>
 </html>
+
 
 
