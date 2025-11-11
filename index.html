@@ -7,14 +7,12 @@
       src="https://us-assets.i.posthog.com/static/array.js"
     ></script>
     <script src="https://static.readdy.ai/static/e.js"></script>
-    <meta name="google-site-verification" content="yWut7HnGGWZifjQCmDRxTPNppCA3jwHV7Zf_mwndRVw" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Digitrike - Smart Tricycle Booking System in Sudipen. Book, track, and enjoy seamless rides!">
+    <title>Digitrike - A Smart Tricycle Booking and Fare System for Seamless Local Travel in Sudipen</title>
+    <meta name="description" content="DigiTrike is a smart tricycle booking and fare system designed to make local travel in Sudipen easier, faster, and more convenient for passengers and drivers.">
 <meta name="keywords" content="Digitrike, tricycle booking, Sudipen, transport app, smart booking">
 <meta name="author" content="Digitrike Team">
-    <meta name="robots" content="index, follow">
-    <title>Digitrike - Smart Tricycle Booking System</title>
     <link rel="icon" type="image/png" href="SuToda_icon.jpg" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
@@ -1043,7 +1041,7 @@
       <h1
         class="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight"
       >
-        Smart Tricycle Booking System for
+        Smart Tricycle Booking and Fare System for
         <span class="text-yellow-600">Sudipen</span>
       </h1>
       <p
@@ -1178,6 +1176,20 @@
             class="w-full h-auto object-contain object-top rounded-lg"
           />
         </div>
+         <div class="app-carousel-slide w-full flex-shrink-0">
+          <img
+            src="./7.png"
+            alt="User Dashboard"
+            class="w-full h-auto object-contain object-top rounded-lg"
+          />
+        </div>
+         <div class="app-carousel-slide w-full flex-shrink-0">
+          <img
+            src="./8.png"
+            alt="User Dashboard"
+            class="w-full h-auto object-contain object-top rounded-lg"
+          />
+        </div>
       </div>
     </div>
 
@@ -1210,10 +1222,17 @@
                 <button
                   class="app-dot w-2 h-2 rounded-full transition-all bg-gray-300"
                 ></button>
+                <button
+                  class="app-dot w-2 h-2 rounded-full transition-all bg-gray-300"
+                ></button>
+                <button
+                  class="app-dot w-2 h-2 rounded-full transition-all bg-gray-300"
+                ></button>
               </div>
             </div>
           </div>
         </div>
+
         <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16">
   <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
     <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
@@ -1346,7 +1365,7 @@
         class="bg-yellow-50 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
       >
         <img
-          src="./jereme.jpg"
+          src="./Jereme.jpg"
           alt="Backend Developer"
           class="w-24 h-24 rounded-full mx-auto mb-4 object-cover object-top"
         />
@@ -1503,47 +1522,96 @@
       crossorigin="anonymous"
       src="https://us-assets.i.posthog.com/static/dead-clicks-autocapture.js?v=1.288.0"
     ></script>
-    <script id="app-carousel-functionality">
-      document.addEventListener("DOMContentLoaded", function () {
-        const appTrack = document.querySelector(".app-carousel-track");
-        const appSlides = document.querySelectorAll(".app-carousel-slide");
-        const appPrevBtn = document.querySelector(".app-carousel-prev");
-        const appNextBtn = document.querySelector(".app-carousel-next");
-        const appDots = document.querySelectorAll(".app-dot");
-        let appCurrentSlide = 0;
-        const appTotalSlides = appSlides.length;
-        function updateAppCarousel() {
-          appTrack.style.transform = `translateX(-${appCurrentSlide * 100}%)`;
-          appDots.forEach((dot, index) => {
-            if (index === appCurrentSlide) {
-              dot.classList.remove("bg-gray-300");
-              dot.classList.add("bg-primary");
-            } else {
-              dot.classList.remove("bg-primary");
-              dot.classList.add("bg-gray-300");
-            }
-          });
-        }
-        function nextAppSlide() {
-          appCurrentSlide = (appCurrentSlide + 1) % appTotalSlides;
-          updateAppCarousel();
-        }
-        function prevAppSlide() {
-          appCurrentSlide =
-            (appCurrentSlide - 1 + appTotalSlides) % appTotalSlides;
-          updateAppCarousel();
-        }
-        appNextBtn.addEventListener("click", nextAppSlide);
-        appPrevBtn.addEventListener("click", prevAppSlide);
-        appDots.forEach((dot, index) => {
-          dot.addEventListener("click", () => {
-            appCurrentSlide = index;
-            updateAppCarousel();
-          });
-        });
-        setInterval(nextAppSlide, 4000);
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".app-carousel-track");
+    const slides = Array.from(document.querySelectorAll(".app-carousel-slide"));
+    const dots = Array.from(document.querySelectorAll(".app-dot"));
+    const nextBtn = document.querySelector(".app-carousel-next");
+    const prevBtn = document.querySelector(".app-carousel-prev");
+
+    let currentIndex = 0;
+    let autoSlideInterval;
+    let isPaused = false;
+    let isInView = false;
+
+    // Slide function
+    function goToSlide(index) {
+      if (index >= slides.length) index = 0;
+      if (index < 0) index = slides.length - 1;
+      currentIndex = index;
+      track.style.transition = "transform 0.6s ease-in-out";
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      updateDots();
+    }
+
+    function updateDots() {
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("bg-primary", i === currentIndex);
+        dot.classList.toggle("bg-gray-300", i !== currentIndex);
       });
-    </script>
+    }
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoSlideInterval = setInterval(() => {
+        goToSlide(currentIndex + 1);
+      }, 2000); // ✅ faster (2 seconds per slide)
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+
+    function pauseTemporarily() {
+      stopAutoSlide();
+      isPaused = true;
+      setTimeout(() => {
+        isPaused = false;
+        if (isInView) startAutoSlide();
+      }, 4000);
+    }
+
+    nextBtn.addEventListener("click", () => {
+      goToSlide(currentIndex + 1);
+      pauseTemporarily();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      goToSlide(currentIndex - 1);
+      pauseTemporarily();
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        goToSlide(i);
+        pauseTemporarily();
+      });
+    });
+
+    // ✅ Detect when carousel is visible on screen
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            isInView = true;
+            startAutoSlide();
+          } else {
+            isInView = false;
+            stopAutoSlide();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(document.querySelector(".app-carousel-container"));
+
+    // Initialize
+    goToSlide(0);
+  });
+</script>
+
     <script id="mobile-menu-functionality">
       document.addEventListener("DOMContentLoaded", function () {
         const hamburgerBtn = document.querySelector(".hamburger-btn");
@@ -1670,7 +1738,7 @@
       window.host = "readdy.ai";
     </script>
 
- <!-- Scroll to Top Button -->
+  <!-- Scroll to Top Button -->
 <button
   id="scrollTopBtn"
   class="hidden fixed bottom-6 right-6 w-10 h-10 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center overflow-hidden"
@@ -1741,10 +1809,3 @@
 
   </body>
 </html>
-
-
-
-
-
-
-
