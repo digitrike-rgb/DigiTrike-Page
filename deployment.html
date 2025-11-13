@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deployment - Digitrike</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#eab308",
+              secondary: "#fbbf24",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Global Animation Styles -->
+    <style>
+      /* Carousel 1 Animations - Fade Slide Up */
+      @keyframes fadeSlideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Carousel 2 Animations - Fade Slide Left */
+      @keyframes fadeSlideLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(60px) rotateY(10deg);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0) rotateY(0);
+        }
+      }
+
+      /* Carousel 3 Animations - Fade Scale */
+      @keyframes fadeScale {
+        0% {
+          opacity: 0;
+          transform: scale(0.85);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Carousel 4 Animations - Fade Slide Right */
+      @keyframes fadeSlideRight {
+        0% {
+          opacity: 0;
+          transform: translateX(-60px) rotateY(-10deg);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0) rotateY(0);
+        }
+      }
+
+      /* Team Section Animations - Bounce In */
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.6) translateY(30px);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      /* Certificate Section Animations - Flip In */
+      @keyframes flipInX {
+        0% {
+          opacity: 0;
+          transform: perspective(400px) rotateY(90deg);
+        }
+        100% {
+          opacity: 1;
+          transform: perspective(400px) rotateY(0deg);
+        }
+      }
+
+      /* Animation Classes */
+      .carousel-fade-up {
+        opacity: 0;
+        animation: fadeSlideUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        animation-delay: 0.3s;
+        animation-play-state: paused;
+      }
+
+      .carousel-fade-up.animate {
+        animation-play-state: running;
+      }
+
+      .carousel-fade-left {
+        opacity: 0;
+        animation: fadeSlideLeft 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        animation-delay: 0.3s;
+        animation-play-state: paused;
+      }
+
+      .carousel-fade-left.animate {
+        animation-play-state: running;
+      }
+
+      .carousel-fade-scale {
+        opacity: 0;
+        animation: fadeScale 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        animation-delay: 0.3s;
+        animation-play-state: paused;
+      }
+
+      .carousel-fade-scale.animate {
+        animation-play-state: running;
+      }
+
+      .carousel-fade-right {
+        opacity: 0;
+        animation: fadeSlideRight 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        animation-delay: 0.3s;
+        animation-play-state: paused;
+      }
+
+      .carousel-fade-right.animate {
+        animation-play-state: running;
+      }
+
+      .team-bounce-in {
+        opacity: 0;
+        animation: bounceIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        animation-delay: 0.2s;
+        animation-play-state: paused;
+      }
+
+      .team-bounce-in.animate {
+        animation-play-state: running;
+      }
+
+      .cert-flip-in {
+        opacity: 0;
+        animation: flipInX 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        animation-delay: 0.3s;
+        animation-play-state: paused;
+      }
+
+      .cert-flip-in.animate {
+        animation-play-state: running;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 bg-white shadow-sm border-b border-yellow-100"
+    >
+      <nav class="px-6 py-4">
+        <div
+          class="sticky top-0 bg-white z-50 flex items-center justify-between max-w-7xl mx-auto"
+        >
+          <div class="flex items-center space-x-2">
+            <div
+              class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center p-1"
+            >
+              <img
+                src="https://static.readdy.ai/image/233a9126fa5ade72cd1cee4aa7c556bb/169b447ef90537383b0ddbcd075e0b4c.jpeg"
+                alt="Digitrike Logo"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <span class="text-2xl font-['Pacifico'] text-yellow-500"
+              >Digitrike</span
+            >
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a
+              href="index.html#about"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >About</a
+            >
+            <a
+              href="index.html#routes"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Routes</a
+            >
+            <a
+              href="index.html#destinations"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Destinations</a
+            >
+            <a
+              href="index.html#services"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Services</a
+            >
+            <a
+              href="index.html#developers"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Developers</a
+            >
+
+            <!-- More Links Toggle -->
+            <div class="relative">
+              <span
+                id="toggleMoreText"
+                class="text-gray-700 hover:text-primary cursor-pointer font-semibold"
+              >
+                More Links <i class="ri-arrow-down-s-line align-middle"></i>
+              </span>
+              <div
+                id="moreLinksText"
+                class="hidden absolute top-full right-0 mt-2 w-48 bg-white shadow-lg border border-yellow-100 rounded-lg flex flex-col z-50"
+              >
+                <a
+                  href="deployment.html"
+                  class="px-4 py-2 text-gray-700 hover:text-primary hover:bg-yellow-50 transition-colors rounded-t-lg"
+                  >Deployment</a
+                >
+                <a
+                  href="officials.html"
+                  class="px-4 py-2 text-gray-700 hover:text-primary hover:bg-yellow-50 transition-colors rounded-b-lg"
+                  >Sudipen Officials</a
+                >
+                <a
+                  href="sudipen_contacts.html"
+                  class="px-4 py-2 text-gray-700 hover:text-primary hover:bg-yellow-50 transition-colors rounded-b-lg"
+                  >Sudipen Contacts</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Hamburger Button -->
+          <button
+            id="hamburgerBtn"
+            class="md:hidden w-10 h-10 flex items-center justify-center"
+          >
+            <i class="text-2xl text-gray-700 ri-menu-line"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobileMenu"
+          class="mobile-menu md:hidden bg-white border-t border-yellow-100 hidden"
+        >
+          <div class="px-6 py-4 space-y-2">
+            <a
+              href="index.html"
+              class="block text-gray-700 hover:text-primary transition-colors py-2"
+              >Home</a
+            >
+            <a
+              href="index.html#about"
+              class="block text-gray-700 hover:text-primary transition-colors py-2"
+              >About</a
+            >
+            <a
+              href="index.html#routes"
+              class="block text-gray-700 hover:text-primary transition-colors py-2"
+              >Routes</a
+            >
+            <a
+              href="index.html#destinations"
+              class="block text-gray-700 hover:text-primary transition-colors py-2"
+              >Destinations</a
+            >
+            <a
+              href="index.html#services"
+              class="block text-gray-700 hover:text-primary transition-colors py-2"
+              >Services</a
+            >
+            <a
+              href="index.html#developers"
+              class="block text-gray-700 hover:text-primary transition-colors py-2"
+              >Developers</a
+            >
+
+            <!-- More Links Toggle for Mobile -->
+            <div class="border-t border-yellow-100 mt-2 pt-2">
+              <span
+                id="toggleMoreMobile"
+                class="block text-gray-700 hover:text-primary cursor-pointer font-semibold py-2"
+              >
+                More Links <i class="ri-arrow-down-s-line align-middle"></i>
+              </span>
+              <div
+                id="moreLinksMobile"
+                class="hidden flex flex-col pl-4 space-y-1"
+              >
+                <a
+                  href="deployment.html"
+                  class="block text-gray-700 hover:text-primary transition-colors py-2"
+                  >Deployment</a
+                >
+                <a
+                  href="officials.html"
+                  class="block text-gray-700 hover:text-primary transition-colors py-2"
+                  >Sudipen Officials</a
+                >
+                <a
+                  href="sudipen_contacts.html"
+                  class="block text-gray-700 hover:text-primary transition-colors py-2"
+                  >Sudipen Contacts</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scripts for dropdowns -->
+        <script>
+          // Desktop More Links
+          const toggleText = document.getElementById("toggleMoreText");
+          const moreLinksText = document.getElementById("moreLinksText");
+          toggleText.addEventListener("click", (e) => {
+            e.stopPropagation();
+            moreLinksText.classList.toggle("hidden");
+            toggleText.querySelector("i").classList.toggle("rotate-180");
+          });
+
+          // Mobile More Links
+          const toggleMobile = document.getElementById("toggleMoreMobile");
+          const moreLinksMobile = document.getElementById("moreLinksMobile");
+          toggleMobile.addEventListener("click", (e) => {
+            e.stopPropagation();
+            moreLinksMobile.classList.toggle("hidden");
+            toggleMobile.querySelector("i").classList.toggle("rotate-180");
+          });
+
+          // Hamburger toggle
+          const hamburgerBtn = document.getElementById("hamburgerBtn");
+          const mobileMenu = document.getElementById("mobileMenu");
+          hamburgerBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle("hidden");
+          });
+
+          // Close if clicked outside
+          document.addEventListener("click", (e) => {
+            if (!moreLinksText.classList.contains("hidden")) {
+              moreLinksText.classList.add("hidden");
+              toggleText.querySelector("i").classList.remove("rotate-180");
+            }
+            if (!moreLinksMobile.classList.contains("hidden")) {
+              moreLinksMobile.classList.add("hidden");
+              toggleMobile.querySelector("i").classList.remove("rotate-180");
+            }
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          });
+        </script>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-20">
+      <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">
+        Deployment Team
+      </h1>
+      <p class="text-center text-gray-700 mb-12">
+        Our team deploying the Digitrike system across Sudipen
+      </p>
+
+      <!-- Carousel 1: Portrait (m1-m9) - Left to Right -->
+      <div class="mb-16 carousel-fade-up">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+          Team Gallery
+        </h2>
+        <div class="relative">
+          <div
+            id="carousel1"
+            class="flex gap-4 overflow-x-auto scroll-smooth px-4 hide-scrollbar"
+          >
+            <div class="carousel1-slide flex-shrink-0">
+              <img
+                src="m1.jpg"
+                alt="Team Member 1"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel1-slide flex-shrink-0">
+              <img
+                src="m2.jpg"
+                alt="Team Member 2"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel1-slide flex-shrink-0">
+              <img
+                src="m3.jpg"
+                alt="Team Member 3"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel1-slide flex-shrink-0">
+              <img
+                src="m4.jpg"
+                alt="Team Member 4"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel1-slide flex-shrink-0">
+              <img
+                src="m5.jpg"
+                alt="Team Member 5"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel1-slide flex-shrink-0">
+              <img
+                src="m6.jpg"
+                alt="Team Member 6"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel1-slide flex-shrink-0">
+              <img
+                src="m7.jpg"
+                alt="Team Member 7"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel1-slide flex-shrink-0">
+              <img
+                src="m8.jpg"
+                alt="Team Member 8"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel1-slide flex-shrink-0">
+              <img
+                src="m9.jpg"
+                alt="Team Member 9"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel 2: Landscape (d1-d8) - Right to Left -->
+      <div class="mb-16 carousel-fade-left">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+          Team Gallery
+        </h2>
+        <div class="relative">
+          <div
+            id="carousel2"
+            class="flex gap-4 overflow-x-auto scroll-smooth px-4 hide-scrollbar"
+          >
+            <div class="carousel2-slide flex-shrink-0">
+              <img
+                src="d1.jpg"
+                alt="Deployment 1"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel2-slide flex-shrink-0">
+              <img
+                src="d2.jpg"
+                alt="Deployment 2"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel2-slide flex-shrink-0">
+              <img
+                src="d3.jpg"
+                alt="Deployment 3"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel2-slide flex-shrink-0">
+              <img
+                src="d4.jpg"
+                alt="Deployment 4"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel2-slide flex-shrink-0">
+              <img
+                src="d5.jpg"
+                alt="Deployment 5"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel2-slide flex-shrink-0">
+              <img
+                src="d6.jpg"
+                alt="Deployment 6"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel2-slide flex-shrink-0">
+              <img
+                src="d7.jpg"
+                alt="Deployment 7"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel 3: Portrait (m10-m17) - Left to Right -->
+      <div class="mb-16 carousel-fade-scale">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+          Team Gallery
+        </h2>
+        <div class="relative">
+          <div
+            id="carousel3"
+            class="flex gap-4 overflow-x-auto scroll-smooth px-4 hide-scrollbar"
+          >
+            <div class="carousel3-slide flex-shrink-0">
+              <img
+                src="m10.jpg"
+                alt="Team Member 10"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel3-slide flex-shrink-0">
+              <img
+                src="m11.jpg"
+                alt="Team Member 11"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel3-slide flex-shrink-0">
+              <img
+                src="m12.jpg"
+                alt="Team Member 12"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel3-slide flex-shrink-0">
+              <img
+                src="m13.jpg"
+                alt="Team Member 13"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel3-slide flex-shrink-0">
+              <img
+                src="m14.jpg"
+                alt="Team Member 14"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel3-slide flex-shrink-0">
+              <img
+                src="m15.jpg"
+                alt="Team Member 15"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel3-slide flex-shrink-0">
+              <img
+                src="m16.jpg"
+                alt="Team Member 16"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel3-slide flex-shrink-0">
+              <img
+                src="m17.jpg"
+                alt="Team Member 17"
+                class="h-96 object-cover rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel 4: Landscape (d9-d15) - Right to Left -->
+      <div class="mb-16 carousel-fade-right">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+          Team Gallery
+        </h2>
+        <div class="relative">
+          <div
+            id="carousel4"
+            class="flex gap-4 overflow-x-auto scroll-smooth px-4 hide-scrollbar"
+          >
+            <div class="carousel4-slide flex-shrink-0">
+              <img
+                src="d9.jpg"
+                alt="Deployment 9"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel4-slide flex-shrink-0">
+              <img
+                src="d10.jpg"
+                alt="Deployment 10"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel4-slide flex-shrink-0">
+              <img
+                src="d11.jpg"
+                alt="Deployment 11"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel4-slide flex-shrink-0">
+              <img
+                src="d12.jpg"
+                alt="Deployment 12"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel4-slide flex-shrink-0">
+              <img
+                src="d13.jpg"
+                alt="Deployment 13"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel4-slide flex-shrink-0">
+              <img
+                src="d14.jpg"
+                alt="Deployment 14"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <div class="carousel4-slide flex-shrink-0">
+              <img
+                src="d15.jpg"
+                alt="Deployment 15"
+                class="h-64 object-cover rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        
+        /* Carousel responsive styles */
+        #carousel1, #carousel2, #carousel3, #carousel4 {
+          width: 100%;
+          scroll-behavior: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        /* Ensure carousel containers work on mobile */
+        .carousel-fade-up, .carousel-fade-left, .carousel-fade-scale, .carousel-fade-right {
+          width: 100%;
+          overflow: hidden;
+        }
+
+        /* Responsive image sizing for small screens */
+        @media (max-width: 640px) {
+          #carousel1 .carousel1-slide img {
+            height: 250px;
+          }
+          #carousel3 .carousel3-slide img {
+            height: 250px;
+          }
+          #carousel2 .carousel2-slide img,
+          #carousel4 .carousel4-slide img {
+            height: 180px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          #carousel1 .carousel1-slide img {
+            height: 300px;
+          }
+          #carousel3 .carousel3-slide img {
+            height: 300px;
+          }
+        }
+      </style>
+
+      <script>
+        // Helper function to safely initialize carousel
+        function initCarousel(carouselId, speed) {
+          const carousel = document.getElementById(carouselId);
+          if (!carousel) return;
+
+          let animation;
+          const cards = Array.from(carousel.children);
+          const cardCount = cards.length;
+          
+          // Clone cards for seamless loop
+          cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            carousel.appendChild(clone);
+          });
+
+          function autoScroll() {
+            carousel.scrollLeft += speed;
+            
+            // Seamless infinite loop
+            if (speed > 0) {
+              // Left to right scroll
+              if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+                carousel.scrollLeft = 0;
+              }
+            } else {
+              // Right to left scroll
+              if (carousel.scrollLeft <= 0) {
+                carousel.scrollLeft = carousel.scrollWidth / 2;
+              }
+            }
+            animation = requestAnimationFrame(autoScroll);
+          }
+
+          // Start auto scroll
+          autoScroll();
+
+          // Pause on interaction
+          const pauseScroll = () => cancelAnimationFrame(animation);
+          const resumeScroll = () => autoScroll();
+
+          carousel.addEventListener('mouseenter', pauseScroll);
+          carousel.addEventListener('mouseleave', resumeScroll);
+          carousel.addEventListener('touchstart', pauseScroll);
+          carousel.addEventListener('touchend', resumeScroll);
+          carousel.addEventListener('mousedown', pauseScroll);
+          carousel.addEventListener('mouseup', resumeScroll);
+        }
+
+        // Initialize all carousels after page load
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            initCarousel('carousel1', 1);  // Left to right - slower
+            initCarousel('carousel2', -1); // Right to left - slower
+            initCarousel('carousel3', 1);  // Left to right - slower
+            initCarousel('carousel4', -1); // Right to left - slower
+          }, 100);
+        });
+
+        // Also initialize immediately in case load event fires before script
+        document.addEventListener('DOMContentLoaded', () => {
+          setTimeout(() => {
+            initCarousel('carousel1', 1);  // Left to right - slower
+            initCarousel('carousel2', -1); // Right to left - slower
+            initCarousel('carousel3', 1);  // Left to right - slower
+            initCarousel('carousel4', -1); // Right to left - slower
+          }, 100);
+        });
+      </script>
+    </main>
+
+    <!-- Developers & LGU Representative Section -->
+    <section class="py-20 bg-gradient-to-b from-white via-yellow-50 to-white relative overflow-hidden team-bounce-in">
+      <!-- Decorative Background Elements -->
+      <div class="absolute inset-0 opacity-5">
+        <svg viewBox="0 0 400 400" class="w-full h-full">
+          <circle cx="50" cy="50" r="40" fill="#eab308" opacity="0.3"/>
+          <circle cx="350" cy="350" r="60" fill="#fbbf24" opacity="0.2"/>
+          <path d="M0,150 Q200,100 400,150" stroke="#eab308" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <!-- Section Title -->
+        <div class="text-center mb-16 fade-in-title-dev">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet the Team</h2>
+          <p class="text-xl text-gray-600">DigiTrike Developers & LGU Representative</p>
+        </div>
+
+        <!-- Team Photo Container -->
+        <div class="flex justify-center fade-in-photo-dev">
+          <div class="relative max-w-4xl w-full">
+            <!-- Decorative corners -->
+            <div class="absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-primary rounded-tl-lg"></div>
+            <div class="absolute -top-4 -right-4 w-12 h-12 border-t-4 border-r-4 border-primary rounded-tr-lg"></div>
+            <div class="absolute -bottom-4 -left-4 w-12 h-12 border-b-4 border-l-4 border-primary rounded-bl-lg"></div>
+            <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-4 border-r-4 border-primary rounded-br-lg"></div>
+
+            <!-- Photo Card -->
+            <div class="relative bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-primary/30 p-4">
+              <!-- Header Info -->
+              <div class="bg-gradient-to-r from-primary to-secondary text-white p-6 rounded-lg mb-4 text-center">
+                <p class="text-sm font-semibold mb-1">LGU Representative</p>
+                <p class="text-2xl font-bold">Ma'am Michelle A. Amoyen</p>
+              </div>
+
+              <!-- Team Photo -->
+              <img 
+                src="Pic_Cert.jpg" 
+                alt="DigiTrike Team with LGU Representative" 
+                class="w-full h-auto object-cover rounded-lg shadow-md"
+              />
+
+              <!-- Footer Info -->
+              <div class="text-center mt-4 p-4 bg-yellow-50 rounded-lg">
+                <p class="text-gray-700 font-semibold">DigiTrike Development Team</p>
+                <p class="text-sm text-gray-600">ISPSC Tagudin Campus - Capstone Project 2025-2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animation Styles -->
+      <style>
+        .fade-in-title-dev {
+          opacity: 0;
+          animation: fadeInDown 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+          animation-delay: 0.2s;
+        }
+
+        .fade-in-photo-dev {
+          opacity: 0;
+          animation: fadeInScale 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+          animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInDown {
+          0% {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInScale {
+          0% {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      </style>
+    </section>
+
+    <!-- Certificate Section -->
+    <section
+      class="py-20 bg-gradient-to-br from-yellow-50 via-white to-yellow-50 relative overflow-hidden cert-flip-in"
+    >
+      <!-- Decorative Background Elements -->
+      <div class="absolute inset-0 opacity-5">
+        <svg viewBox="0 0 400 400" class="w-full h-full">
+          <path
+            d="M0,200 Q100,100 200,200 T400,200"
+            stroke="#eab308"
+            stroke-width="3"
+            fill="none"
+            class="animate-pulse"
+          />
+          <path
+            d="M0,250 Q150,150 300,250"
+            stroke="#eab308"
+            stroke-width="2"
+            fill="none"
+            opacity="0.6"
+          />
+          <path
+            d="M50,100 Q200,50 350,100"
+            stroke="#eab308"
+            stroke-width="2"
+            fill="none"
+            opacity="0.4"
+          />
+        </svg>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 relative z-10">
+        <!-- Section Title -->
+        <div class="text-center mb-16 fade-in-title">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Deployment Certificate
+          </h2>
+          <p class="text-xl text-gray-600">
+            Recognition of our successful DigiTrike system deployment
+          </p>
+        </div>
+
+        <!-- Certificate Container -->
+        <div class="flex justify-center fade-in-certificate">
+          <div class="relative max-w-2xl w-full">
+            <!-- Glowing Border Effect -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary rounded-3xl opacity-0 blur-lg animate-pulse"
+              style="animation: glow 3s ease-in-out infinite"
+            ></div>
+
+            <!-- Certificate Card -->
+            <div
+              class="relative bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-primary/20"
+            >
+              <!-- Top accent bar -->
+              <div
+                class="h-1 bg-gradient-to-r from-primary via-secondary to-primary"
+              ></div>
+
+              <!-- Certificate Image -->
+              <img
+                src="certificate.jpg"
+                alt="Deployment Certificate"
+                class="w-full h-auto object-cover"
+              />
+
+              <!-- Bottom accent bar -->
+              <div
+                class="h-1 bg-gradient-to-r from-primary via-secondary to-primary"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animation Styles -->
+      <style>
+        @keyframes glow {
+          0%,
+          100% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+
+        .fade-in-title {
+          opacity: 0;
+          animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+          animation-delay: 0.2s;
+        }
+
+        .fade-in-certificate {
+          opacity: 0;
+          animation: fadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+          animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+      </style>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-900 text-white py-16 mt-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-4 gap-12 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center p-1"
+              >
+                <img
+                  src="https://static.readdy.ai/image/233a9126fa5ade72cd1cee4aa7c556bb/169b447ef90537383b0ddbcd075e0b4c.jpeg"
+                  alt="Digitrike Logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <span class="text-3xl font-['Pacifico'] text-white"
+                >Digitrike</span
+              >
+            </div>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+              Transforming local transportation in Sudipen with smart tricycle
+              booking technology. Safe, reliable, and convenient rides for
+              everyone in the community.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-6">Educational Partnership</h3>
+            <div class="flex items-center space-x-3 mb-4">
+              <div
+                class="w-16 h-16 rounded-lg flex items-center justify-center p-1"
+              >
+                <img
+                  src="./ispsc.png"
+                  alt="ISPSC Logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div>
+                <a
+                  href="https://www.ispsc.edu.ph/home/"
+                  class="text-white hover:text-primary transition-colors font-semibold"
+                  >ISPSC Tagudin Campus</a
+                >
+                <p class="text-gray-400 text-sm">Educational Institution</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fixed bottom part -->
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 mb-4 md:mb-0">
+              Capstone Project: DigiTrike – ISPSC Tagudin (2025–2026)
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll-triggered Animation Script -->
+    <script>
+      // Device-aware observer options
+      const isMobile = window.innerWidth <= 768;
+      const observerOptions = {
+        threshold: isMobile ? 0.1 : 0.15,
+        rootMargin: isMobile ? '50px' : '0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            // Optional: unobserve after animation to save performance
+            // observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Wait for DOM to be fully ready, then observe all animated elements
+      function setupObserver() {
+        document.querySelectorAll('.carousel-fade-up, .carousel-fade-left, .carousel-fade-scale, .carousel-fade-right, .team-bounce-in, .cert-flip-in').forEach(el => {
+          observer.observe(el);
+        });
+      }
+
+      // Initialize observer when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupObserver);
+      } else {
+        setupObserver();
+      }
+
+      // Re-observe on window resize for responsive behavior
+      window.addEventListener('resize', () => {
+        setTimeout(setupObserver, 100);
+      });
+    </script>
+  </body>
+</html>

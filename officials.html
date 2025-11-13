@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudipen Officials - Digitrike</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#eab308",
+            secondary: "#fbbf24",
+          },
+          borderRadius: {
+            none: "0px",
+            sm: "4px",
+            DEFAULT: "8px",
+            md: "12px",
+            lg: "16px",
+            xl: "20px",
+            "2xl": "24px",
+            "3xl": "32px",
+            full: "9999px",
+            button: "8px",
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet" />
+  <style>
+    body{position:relative}
+    .bg-photo{position:fixed;inset:0;background-image:url('Sudipen_Municipal.jpg');background-size:cover;background-position:center;background-attachment:fixed;z-index:0}
+    .bg-dark-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:5}
+    .page-content{position:relative;z-index:10}
+  </style>
+</head>
+<body class="bg-white">
+  <div class="bg-photo" aria-hidden="true"></div>
+  <div class="bg-dark-overlay" aria-hidden="true"></div>
+  <div class="page-content">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-yellow-100">
+    <nav class="px-6 py-4">
+      <div class="sticky top-0 bg-white z-50 flex items-center justify-between max-w-7xl mx-auto">
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center p-1">
+            <img src="https://static.readdy.ai/image/233a9126fa5ade72cd1cee4aa7c556bb/169b447ef90537383b0ddbcd075e0b4c.jpeg" alt="Digitrike Logo" class="w-full h-full object-contain" />
+          </div>
+          <span class="text-2xl font-['Pacifico'] text-yellow-500">Digitrike</span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+          <a href="index.html#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+          <a href="index.html#routes" class="text-gray-700 hover:text-primary transition-colors">Routes</a>
+          <a href="index.html#destinations" class="text-gray-700 hover:text-primary transition-colors">Destinations</a>
+          <a href="index.html#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+          <a href="index.html#developers" class="text-gray-700 hover:text-primary transition-colors">Developers</a>
+
+          <!-- More Links Toggle -->
+          <div class="relative">
+            <span id="toggleMoreText" class="text-gray-700 hover:text-primary cursor-pointer font-semibold">
+              More Links <i class="ri-arrow-down-s-line align-middle"></i>
+            </span>
+            <div id="moreLinksText" class="hidden absolute top-full right-0 mt-2 w-48 bg-white shadow-lg border border-yellow-100 rounded-lg flex flex-col z-50">
+              <a href="deployment.html" class="px-4 py-2 text-gray-700 hover:text-primary hover:bg-yellow-50 transition-colors rounded-t-lg">Deployment</a>
+              <a href="officials.html" class="px-4 py-2 text-gray-700 hover:text-primary hover:bg-yellow-50 transition-colors rounded-b-lg">Sudipen Officials</a>
+               <a href="sudipen_contacts.html" class="px-4 py-2 text-gray-700 hover:text-primary hover:bg-yellow-50 transition-colors rounded-b-lg">Sudipen Contacts</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="hamburgerBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+          <i class="text-2xl text-gray-700 ri-menu-line"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-t border-yellow-100 hidden">
+        <div class="px-6 py-4 space-y-2">
+          <a href="index.html" class="block text-gray-700 hover:text-primary transition-colors py-2">Home</a>
+          <a href="index.html#about" class="block text-gray-700 hover:text-primary transition-colors py-2">About</a>
+          <a href="index.html#routes" class="block text-gray-700 hover:text-primary transition-colors py-2">Routes</a>
+          <a href="index.html#destinations" class="block text-gray-700 hover:text-primary transition-colors py-2">Destinations</a>
+          <a href="index.html#services" class="block text-gray-700 hover:text-primary transition-colors py-2">Services</a>
+          <a href="index.html#developers" class="block text-gray-700 hover:text-primary transition-colors py-2">Developers</a>
+
+          <!-- More Links Toggle for Mobile -->
+          <div class="border-t border-yellow-100 mt-2 pt-2">
+            <span id="toggleMoreMobile" class="block text-gray-700 hover:text-primary cursor-pointer font-semibold py-2">
+              More Links <i class="ri-arrow-down-s-line align-middle"></i>
+            </span>
+            <div id="moreLinksMobile" class="hidden flex flex-col pl-4 space-y-1">
+              <a href="deployment.html" class="block text-gray-700 hover:text-primary transition-colors py-2">Deployment</a>
+              <a href="officials.html" class="block text-gray-700 hover:text-primary transition-colors py-2">Sudipen Officials</a>
+              <a href="sudipen_contacts.html" class="block text-gray-700 hover:text-primary transition-colors py-2">Sudipen Contacts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scripts for dropdowns -->
+      <script>
+        const toggleText = document.getElementById('toggleMoreText');
+        const moreLinksText = document.getElementById('moreLinksText');
+        toggleText.addEventListener('click', (e) => {
+          e.stopPropagation();
+          moreLinksText.classList.toggle('hidden');
+          toggleText.querySelector('i').classList.toggle('rotate-180');
+        });
+
+        const toggleMobile = document.getElementById('toggleMoreMobile');
+        const moreLinksMobile = document.getElementById('moreLinksMobile');
+        toggleMobile.addEventListener('click', (e) => {
+          e.stopPropagation();
+          moreLinksMobile.classList.toggle('hidden');
+          toggleMobile.querySelector('i').classList.toggle('rotate-180');
+        });
+
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburgerBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!moreLinksText.classList.contains('hidden')) {
+            moreLinksText.classList.add('hidden');
+            toggleText.querySelector('i').classList.remove('rotate-180');
+          }
+          if (!moreLinksMobile.classList.contains('hidden')) {
+            moreLinksMobile.classList.add('hidden');
+            toggleMobile.querySelector('i').classList.remove('rotate-180');
+          }
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        });
+      </script>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-6 py-16">
+    <div class="bg-white/90 rounded-2xl p-8 shadow-lg">
+    <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">Sudipen Officials</h1>
+
+    <div class="space-y-8">
+
+      <!-- Mayor -->
+      <div>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-2">Mayor</h2>
+        <p class="text-gray-700">Hon. WENDY JOY D. BUQUING</p>
+      </div>
+
+      <!-- Department / Offices -->
+      <div>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Department / Offices</h2>
+
+        <!-- Table of Department Heads -->
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead class="bg-yellow-50">
+              <tr>
+                <th class="text-left py-2 px-4 border-b border-gray-200">Department / Office</th>
+                <th class="text-left py-2 px-4 border-b border-gray-200">Head</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <!-- Management -->
+              <tr>
+                <td class="py-2 px-4 font-semibold">SB Secretary</td>
+                <td class="py-2 px-4">Hope Macusi</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Health Officer</td>
+                <td class="py-2 px-4">Jerson S. Bangaoil, M.D</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Engineer</td>
+                <td class="py-2 px-4">Engr. Rey P. Urbano</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Treasurer</td>
+                <td class="py-2 px-4">Reina C. Escalo</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Civil Registrar</td>
+                <td class="py-2 px-4">Virginia M. De Guzman</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Social Welfare Officer</td>
+                <td class="py-2 px-4">Teresita N. Pugasen</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Agriculturist</td>
+                <td class="py-2 px-4">Zeny C. Corpuz</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Assessor</td>
+                <td class="py-2 px-4">Jim Lingbaoan</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Planning & Dev’t Officer</td>
+                <td class="py-2 px-4">Susan Orfiano Natividad</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Budget Officer</td>
+                <td class="py-2 px-4">Lina L. Lagria</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Accountant</td>
+                <td class="py-2 px-4">Joy Mae M. Esbeg</td>
+              </tr>
+              <!-- National Agencies -->
+              <tr>
+                <td class="py-2 px-4 font-semibold">MLGOO – DILG</td>
+                <td class="py-2 px-4">MLGOO Moises Epejo Sibayan Jr.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Bureau of Internal Revenue</td>
+                <td class="py-2 px-4">Nola Madiam</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Commission on Election</td>
+                <td class="py-2 px-4">Geribel Valdriz</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Municipal Nutrition Action Officer</td>
+                <td class="py-2 px-4">Wilma O. Ramones</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">ALS Coordinator</td>
+                <td class="py-2 px-4">Analiza Otanis Escobar</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Philippine National Police</td>
+                <td class="py-2 px-4">PCPT Roy K Toyoken</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">NCIP</td>
+                <td class="py-2 px-4">Salud Dalog</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">BFP</td>
+                <td class="py-2 px-4">SF04 Cesar T. Tinaza</td>
+              </tr>
+              <!-- Department of Education -->
+              <tr>
+                <td class="py-2 px-4 font-semibold">Duplas National High School</td>
+                <td class="py-2 px-4">Eufemia B. Merced- OIC</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Old Sudipen National High School</td>
+                <td class="py-2 px-4">Mark Alvin Jay B. Carpio – OIC</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">San Francisco National High School</td>
+                <td class="py-2 px-4">Lea C. Abuyog – OIC</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Sudipen Vocational High School</td>
+                <td class="py-2 px-4">Liza M. Adviento – Principal II</td>
+              </tr>
+              <!-- Elementary Schools -->
+              <tr>
+                <td class="py-2 px-4 font-semibold">Badang Elementary School</td>
+                <td class="py-2 px-4">Dennis B. Sudae – OIC</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Basig Elementary School</td>
+                <td class="py-2 px-4">Michelle E. Jaramilla – Principal II</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Castro Elementary School</td>
+                <td class="py-2 px-4">Leilani O. Olpindo – Principal I</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Duplas Elementary School</td>
+                <td class="py-2 px-4">Ronald G. Padios – OIC</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Maliclico Elementary School</td>
+                <td class="py-2 px-4">Mark Jay F. Lacpapan – OIC</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Old Sudipen Elementary School</td>
+                <td class="py-2 px-4">Carmelita A. Fajardo – Principal IV</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Porporiket Elementary School</td>
+                <td class="py-2 px-4">Fema L. Atebba – OIC</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">San Francisco Elementary School</td>
+                <td class="py-2 px-4">Ian Jay B. Arce – Principal III</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">San Jose Elementary School</td>
+                <td class="py-2 px-4">Gloria M. Ordinario – OIC</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Sengngat Elementary School</td>
+                <td class="py-2 px-4">Ernesto F. Ramos JR – Principal IV</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Sudipen Central School</td>
+                <td class="py-2 px-4">Mary Jean L. Badongan – Principal III</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 font-semibold">Up-uplas Elementary School</td>
+                <td class="py-2 px-4">Eva M. Ambatan – Principal I</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-gray-900 text-white py-16 mt-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-4 gap-12 mb-12">
+        <div class="lg:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center p-1">
+              <img src="https://static.readdy.ai/image/233a9126fa5ade72cd1cee4aa7c556bb/169b447ef90537383b0ddbcd075e0b4c.jpeg" alt="Digitrike Logo" class="w-full h-full object-contain" />
+            </div>
+            <span class="text-3xl font-['Pacifico'] text-white">Digitrike</span>
+          </div>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            Transforming local transportation in Sudipen with smart tricycle
+            booking technology. Safe, reliable, and convenient rides for everyone
+            in the community.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-6">Educational Partnership</h3>
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-16 h-16 rounded-lg flex items-center justify-center p-1">
+              <img src="./ispsc.png" alt="ISPSC Logo" class="w-full h-full object-contain" />
+            </div>
+            <div>
+              <a href="https://www.ispsc.edu.ph/home/" class="text-white hover:text-primary transition-colors font-semibold">ISPSC Tagudin Campus</a>
+              <p class="text-gray-400 text-sm">Educational Institution</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fixed bottom part -->
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 mb-4 md:mb-0">
+            Capstone Project: DigiTrike – ISPSC Tagudin (2025–2026)
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+
+</body>
+</html>
