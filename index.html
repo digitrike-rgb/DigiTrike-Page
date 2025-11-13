@@ -1533,47 +1533,31 @@
         </div>
       </div>
 
-      <!-- Right Side: Video -->
-      <div class="flex items-center justify-center relative">
-        <div class="absolute inset-0 opacity-5">
-          <svg viewBox="0 0 400 400" class="w-full h-full">
-            <path d="M0,200 Q100,100 200,200 T400,200" stroke="#eab308" stroke-width="3" fill="none" class="animate-pulse"/>
-            <path d="M0,250 Q150,150 300,250" stroke="#eab308" stroke-width="2" fill="none" opacity="0.6"/>
-          </svg>
-        </div>
-       <div class="relative z-10 w-full max-w-lg">
-  <div class="relative rounded-3xl overflow-hidden border-2 border-yellow-200/70 bg-gradient-to-br from-yellow-50/30 to-white/50 p-2">
-    <video id="sudipenVideo" class="w-full h-auto rounded-2xl object-cover" playsinline preload="auto" controls>
-      <source src="./sudipenvid.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+     
+<!-- Right Side: Video -->
+<div class="flex items-center justify-center relative">
+  <!-- Background SVG -->
+  <div class="absolute inset-0 opacity-5">
+    <svg viewBox="0 0 400 400" class="w-full h-full">
+      <path d="M0,200 Q100,100 200,200 T400,200" stroke="#eab308" stroke-width="3" fill="none" class="animate-pulse"/>
+      <path d="M0,250 Q150,150 300,250" stroke="#eab308" stroke-width="2" fill="none" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <!-- Video iframe -->
+  <div class="relative z-10 w-full max-w-lg">
+    <div class="relative rounded-3xl overflow-hidden border-2 border-yellow-200/70 bg-gradient-to-br from-yellow-50/30 to-white/50 p-2">
+      <iframe
+        src="https://drive.google.com/file/d/1RTe9qeyEMb4Sgi7XQcwdVoGIO9lR7DKv/preview"
+        width="100%"
+        height="360"
+        allow="autoplay"
+        class="rounded-2xl"
+      ></iframe>
+    </div>
   </div>
 </div>
 
-<script>
-  const video = document.getElementById("sudipenVideo");
-
-  const videoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Try to play video with audio
-        video.muted = false;  // unmute
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(error => {
-            // Autoplay with sound blocked, fallback to muted
-            video.muted = true;
-            video.play();
-          });
-        }
-      } else {
-        video.pause();
-      }
-    });
-  }, { threshold: 0.5 });
-
-  videoObserver.observe(video);
-</script>
 
       </div>
     </div>
@@ -3159,5 +3143,6 @@ carouselTag.addEventListener('touchend', scrollTag);
 
   </body>
 </html>
+
 
 
